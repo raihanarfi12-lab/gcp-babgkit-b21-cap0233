@@ -50,6 +50,16 @@ For more information for Firebase, you can see the [documentation](https://fireb
 `gsutil cp variables.data-00000-of-00001 gs://[project-id]-bucket`
 `gsutil cp variables.index gs://[project-id]-bucket`
 
+## Create Bigquery Table
+1. Open Home to GCP Dashboard > Navigate > Bigquery
+2. Click Done for Welcoming in Bigquery UI
+3. Click three-dot beside of your project ID,then create dataset
+4. Enter 'jobstify' for dataset ID, and click create
+5. Open dataset and Click Plus in the box symbol to create table
+6. For table name, you can enter 'toxic_status'
+7. For schema you can clik add field 2 times, then enter 'user_id' and 'status' for the field
+8. Click create table 
+
 ## Create Cloud Function
 1. Open Home to GCP Dashboard > Navigate > Cloud Function
 2. Create function
@@ -59,6 +69,8 @@ For more information for Firebase, you can see the [documentation](https://fireb
 6. Click Runtime, Build, and Connection setting
 7. For Runtime service account, you can choose service account that you make
 8. For Memory allocated, choose 4 GiB and timeout, choose 30 seconds, then click next
-9. 
+9. Open powershell editor, open gcp-babgkit-b21-cap0233 > main.py, you can edit name of [BUCKET-NAME] to bucket that have you made, then copy to Cloud Function
+10.For requirements.txt, you can copy the the file from gcp-babgkit-b21-cap0233 > requirements.txt
+11.Click Deploy to deploy cloud function 
 
 
