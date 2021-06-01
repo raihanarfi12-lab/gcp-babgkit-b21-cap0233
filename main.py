@@ -10,7 +10,7 @@ def hello_rtdb(event,context):
           data = event["delta"]["status"]
           user = event["delta"]["name"]
           storage_client = storage.Client()
-          bucket = storage_client.get_bucket('ml-bangkit-bucket')
+          bucket = storage_client.get_bucket('[BUCKET-NAME]')
           blob_weight1 = bucket.blob('variables.index')
           blob_weight2 = bucket.blob('variables.data-00000-of-00001')
           blob_tfidf = bucket.blob('tokenizer.pickle')
