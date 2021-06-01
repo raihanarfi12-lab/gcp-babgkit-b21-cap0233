@@ -45,10 +45,10 @@ For more information for Firebase, you can see the [documentation](https://fireb
 1. Open powershell in GCP,ensure that cloud shell connect into your account and project
 2. Clone this repository `git clone https://github.com/raihanarfi12-lab/gcp-babgkit-b21-cap0233.git`
 3. To copy the ML file, you can copy this code
-`cd babgkit-b21-cap0233`
-`gsutil cp tokenizer.pickle gs://[project-id]-bucket`
-`gsutil cp variables.data-00000-of-00001 gs://[project-id]-bucket`
-`gsutil cp variables.index gs://[project-id]-bucket`
+`cd babgkit-b21-cap0233`\
+`gsutil cp tokenizer.pickle gs://[project-id]-bucket`\
+`gsutil cp variables.data-00000-of-00001 gs://[project-id]-bucket`\
+`gsutil cp variables.index gs://[project-id]-bucket`\
 
 ## Create Bigquery Table
 1. Open Home to GCP Dashboard > Navigate > Bigquery
