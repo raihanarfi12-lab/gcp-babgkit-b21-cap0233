@@ -68,10 +68,11 @@ For more information for Firebase, you can see the [documentation](https://fireb
 5. For databse path you can enter jobstify/{push_id} and choose write for event type
 6. Click Runtime, Build, and Connection setting
 7. For Runtime service account, you can choose service account that you make
-8. For Memory allocated, choose 4 GiB and timeout, choose 30 seconds, then click next
+8. For Memory allocated, choose 4 GiB and choose 30 seconds for timeout, then click next
 9. Open powershell editor, open gcp-babgkit-b21-cap0233 > main.py, you can edit name of [BUCKET-NAME] to bucket that have you made, then copy to Cloud Function
 10. For requirements.txt, you can copy the the file from gcp-babgkit-b21-cap0233 > requirements.txt
 11. Click Deploy to deploy Cloud Function
 
-
+## Monitoring
+## Logging
 
