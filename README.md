@@ -48,7 +48,7 @@ For more information for Firebase, you can see the [documentation](https://fireb
 `cd babgkit-b21-cap0233`\
 `gsutil cp tokenizer.pickle gs://[project-id]-bucket`\
 `gsutil cp variables.data-00000-of-00001 gs://[project-id]-bucket`\
-`gsutil cp variables.index gs://[project-id]-bucket`\
+`gsutil cp variables.index gs://[project-id]-bucket`
 
 ## Create Bigquery Table
 1. Open Home to GCP Dashboard > Navigate > Bigquery
@@ -70,7 +70,8 @@ For more information for Firebase, you can see the [documentation](https://fireb
 7. For Runtime service account, you can choose service account that you make
 8. For Memory allocated, choose 4 GiB and timeout, choose 30 seconds, then click next
 9. Open powershell editor, open gcp-babgkit-b21-cap0233 > main.py, you can edit name of [BUCKET-NAME] to bucket that have you made, then copy to Cloud Function
-10.For requirements.txt, you can copy the the file from gcp-babgkit-b21-cap0233 > requirements.txt
+10.For requirements.txt, you can copy the the file from gcp-babgkit-b21-cap0233 > requirements.txt\
 11.Click Deploy to deploy cloud function 
+
 
 
