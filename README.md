@@ -40,6 +40,7 @@ For more information for Firebase, you can see the [documentation](https://fireb
 1. Open Home to GCP Dashboard > Navigate > Storage
 2. Create Bucket
 3. Enter name for bucket, it must unique, you can enter `[project-id]-bucket`for the name of bucket
+4. Leave other default setting,Click Create
 
 ## Input ML file to Cloud Storage
 1. Open powershell in GCP,ensure that cloud shell connect into your account and project
