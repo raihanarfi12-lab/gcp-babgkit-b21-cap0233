@@ -4,11 +4,10 @@
 ### Workflow:
 1. Mobile send information (register,login, comment, or post the job vacancy)
 2. For saving entity (profile data, posting data,status), it will be saved at Realtime Database, but email and password will be saved in Firebase authentication for account authentication 
-3. For saving image (profile image, post image), it will be saved at Cloud Storage
-4. Event (update,delete,creat of comment) in Realtime Database will trigger Cloud Function to run source code
-5. Cloud Function download ML model in Cloud Storage, then ML model classify the comment as hate and abusive or toxic status or not
-6. Cloud Function will stream detected toxic status to Bigquery 
-7. Mobile app request to get data from Realtime Database and Cloud Storage
+3. Event (update,delete,creat of comment) in Realtime Database will trigger Cloud Function to run source code
+4. Cloud Function download ML model in Cloud Storage, then ML model classify the comment as hate and abusive or toxic status or not
+5. Cloud Function will stream detected toxic status to Bigquery 
+6. Mobile app request to get data from Realtime Database and Cloud Storage
 
 ## Requirements:
 1. Firebase Console
