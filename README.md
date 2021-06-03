@@ -76,7 +76,7 @@ For more information for Firebase, you can see the [documentation](https://fireb
 ## Testing
 1. Input with key name and status, then you can give random name and hate,abusive, and toxic status in Indonesia Language in Firebase Realtime Database
 2. Check the logs in function, there will be output similiar like [0.56787], if prediction[0][0]>0.5, it will be toxic comment. Under of that, there will be information about status
-3. After that, go to Bigquery, and in query editor type this query to get the table ``SELECT * FROM `[project-id].jobstify.toxic_status```
+3. After that, go to Bigquery, and in query editor type this query to get the table ``SELECT * FROM `[project-id].jobstify.toxic_status` ``
 
 ## Monitoring
 1. Open Home to GCP Dashboard > Navigate > Monitoring > Dashboard
