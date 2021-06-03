@@ -75,5 +75,12 @@ For more information for Firebase, you can see the [documentation](https://fireb
 11. Click Deploy to deploy Cloud Function
 
 ## Monitoring
-## Logging
+1. Open Home to GCP Dashboard > Navigate > Monitoring > Dashboard
+2. Create Dashboard
+3. Choose resource type and metrics for dashboard and choose stacked bar for the shape of graph
+In our project we choose:
+- Resource type : Firebase Realtime Database, Metric : Database Load
+- Resource type : Cloud Function, Metric : Cloud Function
+- Resource type : GCS Bucket , Metric : Received Bytes
+- Resource type : Bigquery, Metric : Uploaded rows
 
