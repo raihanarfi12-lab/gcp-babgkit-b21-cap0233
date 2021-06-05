@@ -3,14 +3,17 @@ from google.cloud import storage
 import tensorflow as tf
 from tensorflow.keras.preprocessing.sequence import pad_sequences
 from tensorflow.keras.layers import LSTM
-from google.cloud import bigquery
+from google.cloud import bigquery	
+import firebase_admin
+from firebase_admin import db
+from firebase_admin import credentials
 
 def hello_rtdb(event,context):
      if "status" in event["delta"].keys() and "name" in event["delta"].keys():
-          data = event["delta"]["status"]
           user = event["delta"]["name"]
+          data = event["delta"]["status"]
           storage_client = storage.Client()
-          bucket = storage_client.get_bucket('[BUCKET-NAME]')
+          bucket = storage_client.get_bucket('ml-bangkit-bucket')
           blob_weight1 = bucket.blob('variables.index')
           blob_weight2 = bucket.blob('variables.data-00000-of-00001')
           blob_tfidf = bucket.blob('tokenizer.pickle')
@@ -42,11 +45,20 @@ def hello_rtdb(event,context):
                category = "Non Toxic status"
           else:
                category = "Toxic status,need to make status look good"
+               #bigquery
                bq = bigquery.Client()
                table_ref = bq.dataset('jobstify').table('toxic_status')
                table = bq.get_table(table_ref)
                rows = [(user,data)]
                bq.insert_rows(table,rows)
+               #update rtdb to warn user
+               cred = credentials.Certificate('function.json')
+               firebase_admin.initialize_app(cred,{'databaseURL': '[link of realtime database]'})
+               ref = db.reference("Users")
+               source = context.resource
+               path = source.split("/")[len(source.split("/"))-1]
+               box_ref = ref.child(path)
+               box_ref.update({"status": "Status need to be fixed because is abusive"})
           print(f"{user} status: {data},category: {category}")
 
      else:
