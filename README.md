@@ -33,7 +33,8 @@ For more information for Firebase, you can see the [documentation](https://fireb
 3. Click Create Service Account
 4. Enter name, then click create
 5. For the testing,we set role owner for service account,select role > Basic > owner
-6. Click Done
+6.  Click Done
+7.  Create a new key as JSON for service account
 
 ## Create Cloud Storage
 1. Open Home to GCP Dashboard > Navigate > Storage
