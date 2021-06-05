@@ -72,7 +72,9 @@ For more information for Firebase, you can see the [documentation](https://fireb
 8. For Memory allocated, choose 4 GiB and choose 30 seconds for timeout, then click next
 9. Open powershell editor, open gcp-babgkit-b21-cap0233 > main.py, you can edit name of [BUCKET-NAME] to bucket that have you made, then copy to Cloud Function
 10. For requirements.txt, you can copy the the file from gcp-babgkit-b21-cap0233 > requirements.txt
-11. Click Deploy to deploy Cloud Function
+11. Click Deploy to deploy Cloud Function \
+\
+NB: Sometimes, for deploy Cloud function, there is problem to load tensorflow. For that, you can try deploy cloud function again
 
 ## Testing
 1. Input with key name and status, then you can give random name and hate,abusive, and toxic status in Indonesia Language in Firebase Realtime Database
