@@ -6,8 +6,9 @@
 2. For saving entity (profile data, posting data,status), it will be saved at Realtime Database, but email and password will be saved in Firebase authentication for account authentication 
 3. Event (update,delete,creat of comment) in Realtime Database will trigger Cloud Function to run source code
 4. Cloud Function download ML model in Cloud Storage, then ML model classify the comment as hate and abusive or toxic status or not
-5. Cloud Function will stream detected toxic status to Bigquery 
-6. Mobile app request to get data from Realtime Database and Cloud Storage
+5. File in Cloud Storage loaded to Cloud Function
+6. If there is abusive and toxic comment, it will update data in Realtime Database and stream status to Bigquery 
+7. Mobile app request to get data from Realtime Database and Cloud Storage
 
 ## Requirements:
 1. Firebase Console
