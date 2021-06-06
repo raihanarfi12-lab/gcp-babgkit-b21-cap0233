@@ -9,7 +9,7 @@ from firebase_admin import db
 from firebase_admin import credentials
 
 def hello_rtdb(event,context):
-     if "aboutMe" in event["delta"].keys():
+     if "aboutMe" in event["delta"].keys() and event["delta"]["aboutMe"] is not "Status need to be fixed because is hate or abusive speech" :
           if event["data"] is not None:
                if "fullName" in event["data"].keys():
                     user = event["data"]["fullName"]
