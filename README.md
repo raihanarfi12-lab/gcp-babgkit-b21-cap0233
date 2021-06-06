@@ -59,7 +59,7 @@ For more information for Firebase, you can see the [documentation](https://fireb
 4. Enter 'jobstify' for dataset ID, and click create
 5. Open dataset and Click Plus in the box symbol to create table
 6. For table name, you can enter 'toxic_status'
-7. For schema you can clik add field 2 times, then enter 'user_id' and 'status' for the field
+7. For schema you can clik add field 2 times, then enter 'uid','full_name' and 'status' for the field
 8. Click create table 
 
 ## Create Cloud Function
