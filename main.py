@@ -9,9 +9,15 @@ from firebase_admin import db
 from firebase_admin import credentials
 
 def hello_rtdb(event,context):
-     if "status" in event["delta"].keys() and "name" in event["delta"].keys():
-          user = event["delta"]["name"]
-          data = event["delta"]["status"]
+     if "aboutMe" in event["delta"].keys():
+          if event["data"] is not None:
+               if "fullName" in event["data"].keys():
+                    user = event["data"]["fullName"]
+                    uid = event["data"]["id"]  
+          if "fullName" in event["delta"].keys():
+               user = event["delta"]["fullName"]
+               uid = event["delta"]["id"]
+          data = event["delta"]["aboutMe"]
           storage_client = storage.Client()
           bucket = storage_client.get_bucket('ml-bangkit-bucket')
           blob_weight1 = bucket.blob('variables.index')
@@ -49,16 +55,16 @@ def hello_rtdb(event,context):
                bq = bigquery.Client()
                table_ref = bq.dataset('jobstify').table('toxic_status')
                table = bq.get_table(table_ref)
-               rows = [(user,data)]
+               rows = [(uid,user,data)]
                bq.insert_rows(table,rows)
                #update rtdb to warn user
                cred = credentials.Certificate('function.json')
-               firebase_admin.initialize_app(cred,{'databaseURL': '[link of realtime database]'})
-               ref = db.reference("Users")
+               firebase_admin.initialize_app(cred,{'databaseURL': '[link of database]'})
+               ref = db.reference("Profile User")
                source = context.resource
                path = source.split("/")[len(source.split("/"))-1]
                box_ref = ref.child(path)
-               box_ref.update({"status": "Status need to be fixed because is abusive"})
+               box_ref.update({"aboutMe": "Status need to be fixed because is abusive"})
           print(f"{user} status: {data},category: {category}")
 
      else:
