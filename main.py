@@ -64,7 +64,7 @@ def hello_rtdb(event,context):
                source = context.resource
                path = source.split("/")[len(source.split("/"))-1]
                box_ref = ref.child(path)
-               box_ref.update({"aboutMe": "Status need to be fixed because is abusive"})
+               box_ref.update({"aboutMe": "Status need to be fixed because is hate or abusive speech"})
           print(f"{user} status: {data},category: {category}")
 
      else:
