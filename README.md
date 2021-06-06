@@ -67,14 +67,15 @@ For more information for Firebase, you can see the [documentation](https://fireb
 2. Create function
 3. Choose Firebase Realtime Database as trigger
 4. Input Firebase Realtime Database name
-5. For databse path you can enter jobstify/{push_id} and choose write for event type
+5. For databse path you can enter /Profile User/{push_id} and choose write for event type
 6. Click Runtime, Build, and Connection setting
 7. For Runtime service account, you can choose service account that you make
 8. For Memory allocated, choose 4 GiB and choose 30 seconds for timeout, then click next
 9. Open powershell editor, open gcp-babgkit-b21-cap0233 > main.py, you can edit name of [BUCKET-NAME] to bucket that have you made, then copy to Cloud Function
-10. For requirements.txt, you can copy the the file from gcp-babgkit-b21-cap0233 > requirements.txt
-11. Actually, key from service account downloaded automatically to your computer. Open the file with notepad,then copy the content of file. In Cloud Function, add file to deploy, give the filename "function.json"
-12. Click Deploy to deploy Cloud Function \
+10. For entrypoint, keep default name of entrypoint, hello_rtdb. If you want to change, then change function name in main.py same with entrypoint
+11. For requirements.txt, you can copy the the file from gcp-babgkit-b21-cap0233 > requirements.txt
+12. Actually, key from service account downloaded automatically to your computer. Open the file with notepad,then copy the content of file. In Cloud Function, add file to deploy, give the filename "function.json"
+13. Click Deploy to deploy Cloud Function \
 \
 NB: Sometimes, for deploy Cloud function, there is problem to load tensorflow. For that, you can try to deploy cloud function again
 
