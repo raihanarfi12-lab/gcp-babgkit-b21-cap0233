@@ -15,6 +15,7 @@
 - Realtime Database
 - Cloud Storage (extend into GCP automatically)
 2. GCP Console
+- GCP Project
 - Service Account
 - Cloud Function
 - Bigquery
@@ -72,10 +73,11 @@ For more information for Firebase, you can see the [documentation](https://fireb
 7. For Runtime service account, you can choose service account that you make
 8. For Memory allocated, choose 4 GiB and choose 30 seconds for timeout, then click next
 9. Open powershell editor, open gcp-babgkit-b21-cap0233 > main.py, you can edit name of [BUCKET-NAME] to bucket that have you made, then copy to Cloud Function
-10. For entrypoint, keep default name of entrypoint, hello_rtdb. If you want to change, then change function name in main.py same with entrypoint
-11. For requirements.txt, you can copy the the file from gcp-babgkit-b21-cap0233 > requirements.txt
-12. Actually, key from service account downloaded automatically to your computer. Open the file with notepad,then copy the content of file. In Cloud Function, add file to deploy, give the filename "function.json"
-13. Click Deploy to deploy Cloud Function \
+10. For runtime, you can choose Python 3.8
+11. For entrypoint, keep default name of entrypoint, hello_rtdb. If you want to change, then change function name in main.py same with entrypoint
+12. For requirements.txt, you can copy the the file from gcp-babgkit-b21-cap0233 > requirements.txt
+13. Actually, key from service account downloaded automatically to your computer. Open the file with notepad,then copy the content of file. In Cloud Function, add file to deploy, give the filename "function.json"
+14. Click Deploy to deploy Cloud Function \
 \
 NB: Sometimes, for deploy Cloud function, there is problem to load tensorflow. For that, you can try to deploy cloud function again
 
@@ -83,7 +85,7 @@ NB: Sometimes, for deploy Cloud function, there is problem to load tensorflow. F
 1. Input with key name and status, then you can give random name and hate,abusive, and toxic status in Indonesia Language in Firebase Realtime Database
 2. Check the logs in function, there will be output similiar like [0.56787], if prediction[0][0]>0.5, it will be toxic comment. Under of that, there will be information about status
 3. After that, go to Bigquery, and in query editor type this query to get the table ``SELECT * FROM `[project-id].jobstify.toxic_status` `` \
-NB: Table need  time to update content, if you directly check the table through project-id > jobstify > toxic_status, so we recommend to use query editor to look quickly the content,if you need simulation for testing, you can checkout [link](https://youtu.be/kmTphE055Mo)
+NB: Table need  time to update content, if you directly check the table through project-id > jobstify > toxic_status, so we recommend to use query editor to look quickly the content,if you need simulation for testing, you can checkout [link](https://youtu.be/DhMnEhAfDd8)
 
 ## Monitoring
 1. Open Home to GCP Dashboard > Navigate > Monitoring > Dashboard
