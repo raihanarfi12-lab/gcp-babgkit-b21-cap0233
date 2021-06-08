@@ -9,7 +9,7 @@ from firebase_admin import db
 from firebase_admin import credentials
 
 def hello_rtdb(event,context):
-     if "aboutMe" in event["delta"].keys() and event["delta"]["aboutMe"] is not "Status need to be fixed because is hate or abusive speech" :
+     if "aboutMe" in event["delta"].keys() and event["delta"]["aboutMe"]!="Status need to be fixed because is hate or abusive speech" :
           if event["data"] is not None:
                if "fullName" in event["data"].keys():
                     user = event["data"]["fullName"]
@@ -20,11 +20,13 @@ def hello_rtdb(event,context):
           data = event["delta"]["aboutMe"]
           storage_client = storage.Client()
           bucket = storage_client.get_bucket('ml-bangkit-bucket')
+          #download variables and tokenizer
           blob_weight1 = bucket.blob('variables.index')
           blob_weight2 = bucket.blob('variables.data-00000-of-00001')
           blob_tfidf = bucket.blob('tokenizer.pickle')
           blob_weight1.download_to_filename('/tmp/variables.index')
           blob_weight2.download_to_filename('/tmp/variables.data-00000-of-00001')
+          #define ML model
           embedding_dim = 128
           maxlen = 150
           vocab_size = 20000
@@ -41,12 +43,14 @@ def hello_rtdb(event,context):
           blob_tfidf.download_to_filename("/tmp/tokenizer.pickle")
           tokenizer= pickle.load(open('/tmp/tokenizer.pickle','rb'))
           print(data)
+          #ML model do predict
           text_list = []
           text_list.append(data)
           sequenced_text = tokenizer.texts_to_sequences(text_list)[0]
           sequenced_text = pad_sequences([sequenced_text], padding='post', maxlen=maxlen)
           prediction = model.predict(sequenced_text)
           print(prediction[0])
+          #output
           if prediction[0][0]<0.5:
                category = "Non Toxic status"
           else:
