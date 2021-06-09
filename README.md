@@ -1,4 +1,11 @@
-# Capstone Project Bangkit 2021 Group CAP-0233 (Cloud Computing Path)
+# Capstone Project Bangkit 2021 Group CAP-0233 (Cloud Computing and ML Path)
+## Toxic Status Classifier
+We implement our Machine Learning in status or 'about me' in Profile User at android application.
+Our machine learning model classify status as:
+1. Toxic status
+2. Non- Toxic status
+
+For the process, you can look at [colab notebook] (https://colab.research.google.com/drive/1HjzJD4Xx8KTQZ9jE5qYC6uhg07aB-Fp2?usp=sharing)
 ## Architecture Design for Backend in Cloud with Firebase and Google Cloud Platform
 ![alt txt](https://github.com/raihanarfi12-lab/gcp-babgkit-b21-cap0233/blob/main/architecture.png)
 ### Workflow:
