@@ -8,7 +8,7 @@
 4. Cloud Function download ML model in Cloud Storage, then ML model classify the comment as hate and abusive or toxic status or not
 5. File in Cloud Storage loaded to Cloud Function
 6. If there is abusive and toxic comment, it will update data in Realtime Database and stream status to Bigquery 
-7. Mobile app request to get data from Realtime Database and Cloud Storage
+7. Mobile app request to get data from Realtime Database
 
 ## Requirements:
 1. Firebase Console
